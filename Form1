@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace AlishaCrockfordC968
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+            DataTable partsTable = new DataTable();
+
+            partsTable.Columns.Add("Part ID", typeof(int));
+            partsTable.Columns.Add("Name", typeof(string));
+            partsTable.Columns.Add("Inventory", typeof(int));
+            partsTable.Columns.Add("Price", typeof(double));
+            partsTable.Columns.Add("Minimum", typeof(int));
+            partsTable.Columns.Add("Maximum", typeof(int));
+
+            partsTable.Rows.Add(1, "Wheels", 4, 109.99, 4, 8);
+            partsTable.Rows.Add(2, "Tires", 4, 89.99, 8, 12);
+            partsTable.Rows.Add(3, "Pistons", 2, 149.99, 2, 10);
+
+            dataGridView1.DataSource = partsTable;
+
+            DataTable productsTable = new DataTable();
+
+            productsTable.Columns.Add("Product ID", typeof(int));
+            productsTable.Columns.Add("Name", typeof(string));
+            productsTable.Columns.Add("Inventory", typeof(int));
+            productsTable.Columns.Add("Price", typeof(double));
+            productsTable.Columns.Add("Minimum", typeof(int));
+            productsTable.Columns.Add("Maximum", typeof(int));
+
+            productsTable.Rows.Add(1, "Toyota", 6, 24199.00, 1, 25);
+            productsTable.Rows.Add(2, "Honda", 6, 19990.00, 1, 25);
+
+            dataGridView2.DataSource = productsTable;
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
